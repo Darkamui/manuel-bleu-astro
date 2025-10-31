@@ -1,0 +1,14 @@
+---
+import { Button } from '@/components/ui/button';
+import Hero from '../components/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import { t } from '../lib/t';
+
+const {lang, other} = Astro.props;
+
+---
+
+<Layout lang={lang} other={other} t={t}>
+	<Hero other={other} />
+  <Button>yo</Button>
+</Layout>

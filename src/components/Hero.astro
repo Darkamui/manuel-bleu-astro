@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import manuel from "../assets/bleu.webp";
+import "../styles/global.css"
+
+const {lang,other,t} = Astro.props;
+---
+
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-indigo-600 via-indigo-700 to-indigo-800">
+  <!-- Content outer container -->
+  <div class="container mx-auto px-6 py-16 relative z-10">
+    <!-- Content inner container -->
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <!-- Left content container -->
+      <div class="flex justify-center animate-scale-in">
+        <Image src={manuel} format="webp" quality="high" alt="" width={450} height={750} loading="eager" layout="constrained" />
+      </div>
+      <!-- Right content container -->
+       <div class="flex flex-col gap-8 justify-center text-white">
+        <!-- Language CTA -->
+         <div class="">
+          <a href={`/${other}/`}>{other.toUpperCase()}</a>
+         </div>
+       </div>
+    </div>
+  </div>
+   {/* Wave container */}
+      <div class="absolute bottom-0 left-0 right-0 animate-fade-in">
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full"
+        >
+          <path
+            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+            fill="rgba(255,255,255,1)"
+          />
+        </svg>
+      </div>
+</section>
